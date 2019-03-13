@@ -6,6 +6,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	perspective: 10px;
 }
 .bowl{
 	width: 300px;
@@ -75,19 +76,24 @@ body{
 	margin-top: 20px;
 	width: 100px;
 	animation: animateShark 5s linear infinite;
+	transform-style: preserve-3d;
+	transform: translate(10px, 0) rotateY(0deg);
 }
 @keyframes animateShark{
 	0%{
-		transform: translate(0, 0) rotateY(180deg);
+		transform: translate(10px, 0) rotateY(0deg);
+	}
+	40%{
+		transform: translate(180px, 0) rotateY(0deg);
 	}
 	50%{
 		transform: translate(180px, 0) rotateY(180deg);
 	}
-	51%{
-		transform: translate(180px, 0) rotateY(0deg);
+	90%{
+		transform: translate(10px, 0) rotateY(180deg);
 	}
 	100%{
-		transform: translate(0, 0) rotateY(0deg);
+		transform: translate(10px, 0) rotateY(0deg);
 	}
 }
 @keyframes animate{
